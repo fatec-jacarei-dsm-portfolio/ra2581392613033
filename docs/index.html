@@ -1,11 +1,149 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfólio - ALEF GABRIEL DE OLIVEIRA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#141414">
+  <meta name="description" content="Currículo e projetos de Alef Gabriel de Oliveira, estudante de Desenvolvimento de Software Multiplataforma na FATEC Jacareí.">
+  <title>Alef Gabriel — Currículo & Projetos</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
-    <h1>Bem vindo ao Portfólio de ALEF GABRIEL DE OLIVEIRA</h1>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <div class="site">
+    <header class="barra-superior">
+      <a class="assinatura" href="#curriculo" aria-label="Alef Gabriel, início">ag<span>.</span></a>
+      <span class="edicao">CURRÍCULO & PORTFÓLIO <span>/ 2026</span></span>
+      <div class="player" role="group" aria-label="Player de música">
+        <div class="faixa-musica"><span class="disco-mini" aria-hidden="true">♪</span><span><strong>FAINT</strong><small>Linkin Park · 8 Bit Universe tribute</small></span></div>
+        <div class="player-controles">
+          <button id="controle-som" type="button" aria-label="Reproduzir música" aria-pressed="false">▶</button>
+          <button id="mutar-som" type="button" aria-label="Silenciar música" aria-pressed="false">Som</button>
+          <button id="diminuir-volume" type="button" aria-label="Diminuir volume">−</button>
+          <label class="sr-only" for="volume">Volume da música</label><input id="volume" type="range" min="0" max="100" step="1" value="25">
+          <button id="aumentar-volume" type="button" aria-label="Aumentar volume">+</button><output id="valor-volume" for="volume">25%</output>
+        </div>
+      </div>
+      <audio id="trilha" autoplay loop preload="metadata" aria-label="Faint — tributo 8-bit a Linkin Park"><source src="Faint 8 Bit Tribute to Linkin Park 8 Bit Universe.mp3" type="audio/mpeg"></audio>
+      <span id="aviso-som" class="sr-only" role="status"></span>
+    </header>
+    <nav class="navegacao" aria-label="Páginas do portfólio">
+      <a href="#curriculo" aria-current="page"><span>01</span> Currículo</a>
+      <a href="#projetos"><span>02</span> V-Tec Motors</a>
+      <a href="#scrum"><span>03</span> Scrum Dungeon</a>
+      <a href="#lin0"><span>04</span> LIN0 <span class="seta-nav" aria-hidden="true">↗</span></a>
+    </nav>
+    <main id="conteudo" tabindex="-1">
+      <article class="pagina" id="curriculo" aria-labelledby="titulo-curriculo">
+        <div class="lp-edicao" aria-hidden="true"><span>LINKIN PARK / HYBRID THEORY</span><span>PERSONAL FILE — VOL. 01</span></div>
+        <img class="lp-kanji" src="kanji.png" alt="">
+        <header class="hero">
+          <img class="lp-logo" src="logo.png" alt="Linkin Park">
+          <div class="hero-texto">
+            <p class="sobretitulo">[ ALEF GABRIEL / CURRÍCULO ]</p>
+            <h1 id="titulo-curriculo" tabindex="-1">Alef Gabriel<span>de Oliveira<span class="ponto-final">.</span></span></h1>
+            <p class="apresentacao">Estudante de Desenvolvimento de Software Multiplataforma</p>
+            <div class="hero-meta"><span>FATEC Jacareí</span><span>2º semestre · ingresso em 2026</span></div>
+          </div>
+          <figure class="retrato"><img src="alef.jpeg" alt="Alef Gabriel de Oliveira" width="300" height="360"><figcaption><span>ALEF GABRIEL</span><span aria-hidden="true">[ AG / 01 ]</span></figcaption></figure>
+        </header>
+        <div class="faixa-disponibilidade"><span><span class="ponto"></span> Disponível para estágio e jovem aprendiz</span><a href="https://www.linkedin.com/in/alef-gabriel-oliveira-9bb742346" target="_blank" rel="noopener noreferrer">Vamos conversar <span aria-hidden="true">↗</span></a></div>
+        <div class="curriculo-grid">
+          <aside class="lateral" aria-label="Contato e conhecimentos">
+            <section>
+              <h2 class="rotulo">CONTATO</h2>
+              <ul class="contatos">
+                <li><span class="contato-tipo">GITHUB</span><a href="https://github.com/VtecturboBr" target="_blank" rel="noopener noreferrer">@VtecturboBr <span aria-hidden="true">↗</span></a></li>
+                <li><span class="contato-tipo">LINKEDIN</span><a href="https://www.linkedin.com/in/alef-gabriel-oliveira-9bb742346" target="_blank" rel="noopener noreferrer">Alef Gabriel de Oliveira <span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </section>
+            <section class="conhecimentos">
+              <h2 class="rotulo">CONHECIMENTOS</h2>
+              <h3>Interfaces & linguagens</h3>
+              <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Python</li></ul>
+              <h3>Ferramentas & métodos</h3>
+              <ul class="tags"><li>Git & GitHub</li><li>Docker</li><li>Scrum</li><li>Lógica de programação</li></ul>
+            </section>
+            <figure class="lp-album"><img src="soldado.png" alt="Arte do soldado alado de Hybrid Theory"><figcaption>LINKIN PARK<span>[ HYBRID THEORY ]</span></figcaption></figure>
+            <p class="nota-pessoal">Sempre ouvindo.<br><strong>Sempre evoluindo.</strong><span class="ondas" aria-hidden="true">▂ ▅ ▃ ▇ ▄ ▂ ▆ ▃</span></p>
+          </aside>
+          <div class="principal">
+            <section class="bloco">
+              <h2><span class="numero">01 /</span> Sobre & objetivo</h2>
+              <p>Sou estudante de Desenvolvimento de Software Multiplataforma na FATEC Jacareí, com interesse em front-end, tecnologia e experiências digitais.</p>
+              <p>Busco uma oportunidade para aplicar e desenvolver meus conhecimentos em HTML, CSS, JavaScript e Scrum, contribuir com projetos e adquirir experiência profissional.</p>
+            </section>
+            <section class="bloco">
+              <h2><span class="numero">02 /</span> Formação acadêmica</h2>
+              <div class="formacao"><div><h3>Desenvolvimento de Software Multiplataforma</h3><p>FATEC Jacareí · 2º semestre</p><p>Ingresso: 09/02/2026 · turma do 1º semestre de 2026</p></div><span class="etiqueta">Noturno</span></div>
+            </section>
+            <section class="bloco">
+              <h2><span class="numero">03 /</span> Experiência em projetos</h2>
+              <h3>Interfaces web & experiência do usuário</h3>
+              <p>Desenvolvimento de telas interativas com HTML, CSS e JavaScript, aplicando responsividade, organização visual e conceitos de usabilidade.</p>
+              <h3>Colaboração com Scrum</h3>
+              <p>Participação em projetos acadêmicos com divisão de tarefas, organização por sprints e desenvolvimento colaborativo. Conhecimento básico em versionamento com GitHub.</p>
+              <a class="link-texto" href="#projetos">Conheça os projetos <span aria-hidden="true">↗</span></a>
+            </section>
+            <section class="bloco">
+              <h2><span class="numero">04 /</span> Como eu trabalho</h2>
+              <ul class="competencias"><li>Organização</li><li>Trabalho em equipe</li><li>Proatividade</li><li>Comunicação</li><li>Criatividade</li></ul>
+            </section>
+            <section class="bloco">
+              <h2><span class="numero">05 /</span> Informações adicionais</h2>
+              <p>Disponibilidade para estágio e jovem aprendiz.</p>
+              <p>Interesse em desenvolvimento front-end e tecnologia. Conhecimento básico em versionamento com GitHub.</p>
+              <p>Sempre ouvindo, sempre evoluindo.</p>
+            </section>
+          </div>
+        </div>
+        <footer class="pagina-rodape"><span>01 / 04 <span class="rodape-legenda">— O PERFIL</span></span><a href="#projetos">Próxima faixa: V-Tec <span aria-hidden="true">→</span></a></footer>
+      </article>
+      <article class="pagina" id="projetos" aria-labelledby="titulo-projetos">
+        <header class="cabecalho-pagina vtec-cabecalho"><p class="sobretitulo">02 / GARAGEM DIGITAL · PROJETO PESSOAL</p><h1 id="titulo-projetos" tabindex="-1">V-TEC<span>MOTORS</span></h1><p>Design em alta rotação.<br>Uma vitrine para os clássicos da Honda.</p><div class="conta-giros" aria-hidden="true"><span>VTEC</span><strong>REDLINE</strong><small>JAPANESE PERFORMANCE</small></div><span class="numero-fundo" aria-hidden="true">02</span></header>
+        <div class="projetos-conteudo">
+          <section class="projeto projeto-vtec" aria-labelledby="titulo-vtec">
+            <div class="projeto-topo"><span class="sobretitulo">01 / INTERFACE WEB</span><span class="etiqueta">Projeto pessoal</span></div>
+            <div class="projeto-intro"><div><h2 id="titulo-vtec">V-Tec <span>Motors</span><span class="ponto-final">.</span></h2><p>Uma vitrine digital para os clássicos da Honda. Interface com imagens em destaque, carrossel interativo e navegação entre modelos.</p></div><a class="botao" href="https://github.com/VtecturboBr/Projeto---concessionaria-de-carros-honda" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a></div>
+            <figure class="demonstracao"><img src="demo.gif" alt="Demonstração da interface do V-Tec Motors e seu carrossel de carros Honda" loading="lazy"><figcaption><span>V-TEC MOTORS / DEMONSTRAÇÃO</span><span>HTML · CSS · JAVASCRIPT</span></figcaption></figure>
+          </section>
+          <div class="vtec-ficha"><section><span>01 / VISUAL</span><h3>Clássicos em destaque</h3><p>Imagens amplas e uma identidade visual inspirada no universo automotivo.</p></section><section><span>02 / INTERAÇÃO</span><h3>Escolha o próximo modelo</h3><p>Carrossel com setas e indicadores para explorar a apresentação dos carros.</p></section><section><span>03 / TECNOLOGIAS</span><h3>HTML · CSS · JavaScript</h3><p>Interface web construída com as tecnologias fundamentais do navegador.</p></section></div>
+          <p class="vtec-assinatura" aria-hidden="true">DRIVEN BY CODE. <span>BUILT WITH PASSION.</span></p>
+        </div>
+        <footer class="pagina-rodape"><a href="#curriculo">← Currículo</a><span>02 / 04</span><a href="#scrum">Scrum Dungeon →</a></footer>
+      </article>
+      <article class="pagina pagina-scrum" id="scrum" aria-labelledby="titulo-scrum">
+        <header class="cabecalho-pagina scrum-cabecalho"><p class="sobretitulo">03 / PROJETO ACADÊMICO · 1DSM · 1º SEM. 2026</p><h1 id="titulo-scrum" tabindex="-1">SCRUM<span>DUNGEON</span></h1><p>Equipe sua curiosidade.<br>A próxima aventura é aprender.</p><img class="scrum-mascote" src="corvo-feliz.png" alt="Corvo mago do Scrum Dungeon"><img class="scrum-espada" src="espada.png" alt=""></header>
+        <div class="projetos-conteudo">
+          <section class="projeto projeto-dungeon" aria-labelledby="titulo-dungeon">
+            <div class="projeto-topo"><span class="sobretitulo">02 / RPG EDUCATIVO</span><span class="etiqueta">ABP · 1DSM · 1º Sem. 2026</span></div>
+            <div class="dungeon-intro"><div><img class="dungeon-logo" src="logo-principal.png" alt="Scrum Dungeon" loading="lazy"><h2 id="titulo-dungeon">Scrum <span>Dungeon</span><span class="ponto-final">.</span></h2><p>Aprender Scrum também pode ser uma aventura. Um RPG educativo com cinco níveis, desafios e conquistas, desenvolvido pela equipe Octopus Code.</p><a class="link-texto" href="https://github.com/octopusCode26/scrum-dungeon" target="_blank" rel="noopener noreferrer">Explorar o repositório <span aria-hidden="true">↗</span></a></div><div class="dungeon-arte" aria-hidden="true"><span class="orbita"></span><img src="octopus.png" alt="" loading="lazy"><span class="arte-legenda">&lt; OCTOPUS_C0DE / &gt;</span></div></div>
+            <section class="bloco" style="margin: 24px 0"><h2>Minha contribuição</h2><p>Atuei como desenvolvedor da equipe Octopus Code no projeto integrador do 1º semestre de 2026.</p><p>Na sprint 1, elaborei o diagrama de caso de uso e participei dos diagramas de classes com Igor e de sequência com Vitor.</p><p>Na sprint 2, trabalhei com Renan e Thiago no sistema, na tela e no resultado do questionário; também participei da tela de emissão de certificado com Patricia.</p><p>Na sprint 3, fui responsável pelo nível 2, incluindo história e desafio.</p><a class="link-texto" href="https://github.com/octopusCode26/scrum-dungeon/tree/main/docs/sprints" target="_blank" rel="noopener noreferrer">Consultar entregas nas sprints ↗</a></section>
+            <ul class="tags" aria-label="Tecnologias do Scrum Dungeon"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>EJS</li><li>PostgreSQL</li><li>Git</li><li>Figma</li></ul>
+            <details class="video-projeto"><summary>Assistir à apresentação <span aria-hidden="true">↗</span></summary><iframe src="https://www.youtube.com/embed/iSikcW3CIZE" title="Vídeo de apresentação do Scrum Dungeon" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><a class="link-texto" href="https://www.youtube.com/watch?v=iSikcW3CIZE" target="_blank" rel="noopener noreferrer">Abrir no YouTube ↗</a></details>
+          </section>
+          <section class="jornada" aria-labelledby="titulo-jornada"><h2 id="titulo-jornada">Uma jornada em cinco níveis</h2><div class="jornada-niveis"><div><img src="chapeu.png" alt=""><span>NÍVEL 01</span></div><div><img src="espada.png" alt=""><span>NÍVEL 02</span></div><div><img src="armadura.png" alt=""><span>NÍVEL 03</span></div><div><img src="fogueira.png" alt=""><span>NÍVEL 04</span></div><div><img src="trofeu.png" alt=""><span>NÍVEL 05</span></div></div><p>Desafios, fases e conquistas para explorar os conceitos de Scrum.</p></section>
+        </div>
+        <footer class="pagina-rodape"><a href="#projetos">← V-Tec Motors</a><span>03 / 04</span><a href="#lin0">LIN0 →</a></footer>
+      </article>
+      <article class="pagina pagina-lin0" id="lin0" aria-labelledby="titulo-lin0">
+        <header class="cabecalho-pagina"><p class="sobretitulo">04 / HERO SHOOTER · PROJETO PESSOAL</p><h1 id="titulo-lin0" tabindex="-1">LIN0<span>ENTRE NO COMBATE.</span></h1><p>LIN0 — um protótipo de hero shooter em primeira pessoa, construído com tecnologias web.</p></header>
+        <div class="lin0-conteudo">
+          <section class="lin0-capa" aria-label="Apresentação do LIN0">
+            <img class="lin0-personagem" src="assets/lin0-personagem.png" alt="Arte do personagem Lino, com espada e uma criatura vermelha ao fundo" loading="lazy">
+            <div class="lin0-capa-texto"><span class="etiqueta">PROTÓTIPO / HERO SHOOTER</span><img class="lin0-logo" src="assets/lin0-logo.png" alt="LIN0" loading="lazy"><p>Escolha seu herói.<br>Construa seu estilo de jogo.</p><a class="botao" href="https://github.com/VtecturboBr/LIN0---Web-Hero-Shooter-Game" target="_blank" rel="noopener noreferrer">Explorar o projeto <span aria-hidden="true">↗</span></a><span class="acesso-repo">Código e documentação no GitHub</span></div>
+            <span class="lin0-credito">ARTE DO PERSONAGEM / LIN0</span>
+          </section>
+          <dl class="lin0-numeros"><div><dt>5<span>v</span>5</dt><dd>Partidas locais com bots</dd></div><div><dt>06</dt><dd>Personagens na galeria</dd></div><div><dt>20</dt><dd>Cartas por personagem</dd></div></dl>
+          <section class="lin0-descricao"><div><p class="sobretitulo">SOBRE O PROJETO</p><h2>Um universo.<br>Muitas escolhas<span class="ponto-final">.</span></h2><ul class="tags" aria-label="Tecnologias do LIN0"><li>TypeScript</li><li>Three.js</li><li>Vite</li></ul></div><div><p>LIN0 combina combate em primeira pessoa, habilidades de personagens e personalização de baralhos em um protótipo 3D executado no navegador.</p><p>As partidas locais incluem os modos Conquista e Duelo Shogun, nos mapas Distrito Shōtō e Castelo do Shogun. Um campo de treinamento permite experimentar ataques, cura e mobilidade.</p><p class="nota-prototipo">Em desenvolvimento: geometria procedural e modelos provisórios. O modo online ainda não está implementado.</p></div></section>
+          <div class="lin0-recursos"><section><span class="numero">01 /</span><h3>Combate & habilidades</h3><p>Personagens com habilidades, ataques e supremas, além de bots para partidas locais.</p></section><section><span class="numero">02 /</span><h3>Baralhos personalizados</h3><p>Cinco cartas por baralho, com níveis e 15 pontos para distribuir. Preferências salvas no navegador.</p></section><section><span class="numero">03 /</span><h3>Treinar & experimentar</h3><p>Alvos, aliados e obstáculos para testar combate, cura e movimentação em um ambiente dedicado.</p></section></div>
+          <figure class="demonstracao lin0-mapa"><img src="assets/lin0-mapa.jpg" alt="Prévia do Distrito Shōtō: cenário urbano 3D com prédios, ruas e um ponto de captura" loading="lazy"><figcaption><span>DISTRITO SHŌTŌ / PRÉVIA DO MAPA</span><span>AMBIENTE 3D · THREE.JS</span></figcaption></figure>
+        </div>
+        <footer class="pagina-rodape"><a href="#scrum">← Scrum Dungeon</a><span>04 / 04</span><a href="#curriculo">Voltar ao currículo ↑</a></footer>
+      </article>
+    </main>
+    <footer class="site-rodape"><span>ALEF GABRIEL DE OLIVEIRA</span><span>Feito de código, curiosidade e música.</span><a href="https://www.linkedin.com/in/alef-gabriel-oliveira-9bb742346" target="_blank" rel="noopener noreferrer">ENTRE EM CONTATO ↗</a></footer>
+  </div>
 </body>
 </html>
