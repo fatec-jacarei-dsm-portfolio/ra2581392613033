@@ -30,9 +30,53 @@ let inicioAutomatico = true;
 let volumeAnterior = 25;
 trilha.volume = Number(volume.value) / 100;
 
+const ondas = document.getElementById('ondas');
+const desenho = ondas.getContext('2d');
+let contextoAudio, analisador, amostras, quadro;
+
+async function iniciarOndas() {
+  if (!window.AudioContext || !desenho) return;
+  try {
+    contextoAudio ??= new window.AudioContext();
+    await contextoAudio.resume();
+    if (!analisador) {
+      analisador = contextoAudio.createAnalyser();
+      analisador.fftSize = 2048;
+      amostras = new Float32Array(analisador.fftSize);
+      const fonte = contextoAudio.createMediaElementSource(trilha);
+      fonte.connect(analisador);
+      analisador.connect(contextoAudio.destination);
+    }
+    desenharOndas();
+  } catch {
+    // Sem suporte à análise, o player continua funcionando normalmente.
+  }
+}
+
+function desenharOndas() {
+  cancelAnimationFrame(quadro);
+  if (!desenho) return;
+  const tocando = analisador && !trilha.paused && !trilha.muted && trilha.volume > 0;
+  if (tocando) analisador.getFloatTimeDomainData(amostras);
+  desenho.clearRect(0, 0, ondas.width, ondas.height);
+  desenho.fillStyle = '#ff4b42';
+  const barras = 48;
+  for (let i = 0; i < barras; i++) {
+    let pico = 0;
+    if (tocando) {
+      const inicio = Math.floor(i * amostras.length / barras);
+      const fim = Math.floor((i + 1) * amostras.length / barras);
+      for (let j = inicio; j < fim; j++) pico = Math.max(pico, Math.abs(amostras[j]));
+    }
+    const altura = Math.max(2, Math.min(1, Math.sqrt(pico * trilha.volume)) * (ondas.height - 8));
+    desenho.fillRect(i * ondas.width / barras, (ondas.height - altura) / 2, 6, altura);
+  }
+  if (tocando) quadro = requestAnimationFrame(desenharOndas);
+}
+
 function atualizarSom() {
   const mudo = trilha.muted || trilha.volume === 0;
-  controleSom.textContent = trilha.paused ? '▶' : 'Ⅱ';
+  controleSom.textContent = trilha.paused ? '▶' : '||';
   controleSom.setAttribute('aria-label', trilha.paused ? 'Reproduzir música' : 'Pausar música');
   controleSom.setAttribute('aria-pressed', String(!trilha.paused));
   mutarSom.textContent = mudo ? 'Mudo' : 'Som';
@@ -40,6 +84,7 @@ function atualizarSom() {
   mutarSom.setAttribute('aria-pressed', String(mudo));
   volume.value = String(Math.round(trilha.volume * 100));
   valorVolume.textContent = mudo ? '0%' : `${volume.value}%`;
+  desenharOndas();
 }
 async function reproduzir(manual = false) {
   try {
@@ -75,7 +120,8 @@ mutarSom.addEventListener('click', () => {
 for (const evento of ['play', 'pause', 'volumechange']) trilha.addEventListener(evento, atualizarSom);
 // Navegadores podem bloquear autoplay com som até a primeira interação.
 for (const evento of ['pointerdown', 'keydown']) document.addEventListener(evento, e => {
+  iniciarOndas();
   if (inicioAutomatico && !e.target.closest('.player')) reproduzir();
-}, { once: true });
+});
 atualizarSom();
 reproduzir();

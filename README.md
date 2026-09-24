@@ -23,3 +23,15 @@
 🎤 6DSM - Avaliação futura.
 
 <!-- Substituir os estados acima pelos links dos pitches correspondentes, preservando os anteriores. O vídeo do Scrum Dungeon não substitui o pitch individual. -->
+
+## Estrutura do projeto
+
+```text
+docs/
+├── index.html       # Página principal do GitHub Pages
+├── css/             # Estilos do site
+├── js/              # Navegação e controles de áudio
+└── assets/
+    ├── images/      # Fotos, ilustrações, logos e GIFs
+    └── music/       # Trilha sonora
+```
