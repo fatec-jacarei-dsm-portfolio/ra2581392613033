@@ -37,7 +37,9 @@ p { color: var(--secundario); }
 .faixa-musica { display: flex; gap: 10px; align-items: center; }
 .faixa-musica strong { display: block; font: 14px Impact, sans-serif; letter-spacing: 2px; }
 .faixa-musica small { display: block; font: 9px var(--fonte-mono); color: #b1b1b1; margin-top: 3px; }
-.disco-mini { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #6d6d6d; border-radius: 50%; background: repeating-radial-gradient(#171717 0 2px,#333 3px 4px); color: #f64e44; }
+.disco-mini { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; object-fit: contain; animation: girar-disco 4s linear infinite; animation-play-state: paused; }
+.player:has(#controle-som[aria-pressed="true"]) .disco-mini { animation-play-state: running; }
+@keyframes girar-disco { to { transform: rotate(360deg); } }
 .player-controles { display: flex; align-items: center; gap: 5px; }
 .player button { min-width: 32px; min-height: 36px; border: 1px solid #464646; background: #181818; color: #f3ece1; cursor: pointer; font-size: 12px; }
 .player button:hover { background: #5d211e; }
@@ -227,7 +229,8 @@ h1 { font-size: clamp(44px, 5.7vw, 70px); line-height: 1.04; letter-spacing: -3.
   .lin0-mapa img { aspect-ratio: 4 / 3; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  *:not(.disco-mini), *::before, *::after { animation: none !important; }
 }
 
 /* Quatro capas, quatro universos visuais. */
